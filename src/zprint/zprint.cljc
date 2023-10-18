@@ -6443,11 +6443,11 @@
                      (color-str "fzprint-guide: out:" :bright-red)
                      ((:dzprint options) {} (into [] (condense-depth 1 out))))
               out)
-          (if (> index 3000)
+          (if (> index 20000)
             (throw (#?(:clj Exception.
                        :cljs js/Error.)
                     (str "When processing a guide"
-                           " the iteration limit of 3000 was"
+                           " the iteration limit of 20000 was"
                          " reached!" (first guide-seq))))
             (let [first-guide-seq (first guide-seq)
                   _ (dbg-s
